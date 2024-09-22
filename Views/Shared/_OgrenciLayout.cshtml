@@ -1,0 +1,205 @@
+﻿@model Zeun.Web.Models.OgrenciOzlukBilgileriViewModel
+
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>OBS</title>
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.6.0/flatly/bootstrap.min.css">
+    <link rel="stylesheet" href="css/next-sidebar.css" />
+    <link rel="stylesheet" href="css/perfect-scrollbar.css" />
+    <script src="js/next-sidebar.js"></script>
+    <script src="js/perfect-scrollbar.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>OBS</title>
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.6.0/flatly/bootstrap.min.css">
+
+    <link href="~/content/css/next-sidebar.css" rel="stylesheet" />
+    <link href="~/content/css/perfect-scrollbar.css" rel="stylesheet" />
+    <script src="~/content/js/next-sidebar.js"></script>
+    <script src="~/content/js/perfect-scrollbar.min.js"></script>
+    <style>
+        .box {
+            padding: 20px;
+            border-radius: 8px;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 20px;
+            height: 100%;
+        }
+
+        .box-1 {
+            background-color: #7795aa;
+        }
+
+        .box-2 {
+            background-color: #b88882;
+        }
+
+        .box-3 {
+            background-color: #829a8c;
+        }
+
+        .box-4 {
+            background-color: #999184;
+        }
+    </style>
+</head>
+
+
+<body class="app">
+    <div class="sidebar">
+        <div class="sidebar-inner">
+            <div class="sidebar-logo">
+                <div class="d-flex align-items-center flex-nowrap">
+                    <a class="sidebar-link text-decoration-none" href="#">
+                        <div class="d-flex align-items-center flex-nowrap">
+                            <div class="logo-sm">
+                                <div class="logo d-flex align-items-center justify-content-center">
+                                    <div class="login100-pic js-tilt" data-tilt>
+                                        <img src="~/content/icons/zaun.png" alt="IMG">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="logo-text d-flex align-items-center justify-content-center">
+                                <div class="login100-pic js-tilt" data-tilt>
+                                    <img src="~/content/icons/zaun.png" alt="IMG">
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="">
+                        <div class="mobile-toggle sidebar-toggle">
+                            <a href="#" class="text-decoration-none">
+                                <i class="far fa-times-circle"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <ul class="sidebar-menu scrollable position-relative pt-3">
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link wave-effect" asp-action="OzlukBilgileri" asp-controller="Ogrenci">
+                        <span class="icon-holder">
+                            <i class="fas fa-user"></i>
+                        </span>
+                        <span class="title">Özlük Bilgileri</span>
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link wave-effect" asp-action="BolumMufredati" asp-controller="Ogrenci">
+                        <span class="icon-holder">
+                            <i class="fas fa-book"></i>
+                        </span>
+                        <span class="title">Bölüm Müfredatı</span>
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link wave-effect" asp-action="DonemDersleri" asp-controller="Ogrenci">
+                        <span class="icon-holder">
+                            <i class="far fa-folder"></i>
+                        </span>
+                        <span class="title">Dönem Dersleri </span>
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link wave-effect dropdown-toggle" asp-action="DersProgrami" asp-controller="Ogrenci">
+                        <span class="icon-holder">
+                            <i class="fas fa-calendar-alt"></i>
+                        </span>
+                        <span class="title">Ders Programı</span>
+
+                    </a>
+
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link wave-effect" asp-action="SinavNotlari" asp-controller="Ogrenci">
+                        <span class="icon-holder">
+                            <i class="far fa-file-alt"></i>
+                        </span>
+                        <span class="title">Sınav Notları </span>
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link wave-effect" asp-action="SinavTakvimi" asp-controller="Ogrenci">
+                        <span class="icon-holder">
+                            <i class="far fa-calendar"></i>
+                        </span>
+                        <span class="title">Sınav Takvimi</span>
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link wave-effect" asp-action="Transkript" asp-controller="Ogrenci">
+                        <span class="icon-holder">
+                            <i class="far fa-file"></i>
+                        </span>
+                        <span class="title">Transkript </span>
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" asp-action="DersKayit" asp-controller="Ogrenci">
+                        <span class="icon-holder">
+                            <i class="fas fa-plus"></i>
+                        </span>
+                        <span class="title">Ders Kayıt</span>
+
+                    </a>
+
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </div>
+    <div class="container-wide">
+        <nav class="navbar navbar-expand navbar-light bg-light">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item active">
+                    <a id="sidebar-toggle" class="sidebar-toggle nav-link" href="#">
+                        <i class="fas fa-bars"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Ogrenci">@Model.Ogrenci.Adi  @Model.Ogrenci.Soyadi</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-action="Index" asp-controller="Login">| Oturumu Kapat</a>
+                </li>
+
+            </ul>
+        </nav>
+
+
+
+
+            @RenderBody()
+
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.1/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.6.0/js/bootstrap.min.js"></script>
+        <script src="~/content/js/next-sidebar.js"></script>
+        <script src="~/content/js/perfect-scrollbar.min.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                // next-sidebar ve perfect-scrollbar gibi kütüphaneleri başlatma kodları
+                // ...
+            });
+        </script>
+
+</body>
+
+</html>
+
+

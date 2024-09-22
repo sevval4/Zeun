@@ -1,0 +1,166 @@
+﻿@model Zeun.Web.Models.OgretimElemaniViewModel
+@{
+    Layout = "~/Views/Shared/_OgretimELemaniLayout.cshtml";
+}
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Öğretim Elemanı Ders Kayıt Onayı</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+
+        th,
+        td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 12px;
+            font-size: 14px;
+        }
+
+        th {
+            background-color: #7795aa;
+            color: white;
+        }
+
+        .highlight {
+            background-color: #e0f7fa;
+            cursor: pointer;
+        }
+
+        .btn-container {
+            display: flex;
+        }
+
+        .btn {
+            margin-right: 10px;
+            padding: 8px 16px;
+            cursor: pointer;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+
+        .btn-primary {
+            background-color: #598cde;
+        }
+
+        .btn-danger {
+            background-color: #d36257;
+        }
+
+        .btn-success {
+            background-color: #4b935e;
+        }
+
+        h3 {
+            color: #333;
+            margin-top: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        #secilenOgrenciDersBilgileri {
+            margin-top: 20px;
+        }
+
+            #secilenOgrenciDersBilgileri p {
+                margin-bottom: 10px;
+            }
+    </style>
+</head>
+
+<body>
+
+    <h2>Öğretim Elemanı Ders Kayıt Onayı</h2>
+
+    <table>
+        <thead>
+            <tr class="highlight">
+                <th>Ders Kodu</th>
+                <th>Ders Adı</th>
+                <th>Ders Türü</th>
+                <th>Teorik (T)</th>
+                <th>Uygulama (U)</th>
+                <th>Kredi (K)</th>
+                <th>ECTS</th>
+                <th>İşlemler</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>101</td>
+                <td>Veri Bilimi</td>
+                <td>Zorunlu</td>
+                <td>3</td>
+                <td>2</td>
+                <td>5</td>
+                <td>6</td>
+                <td class="btn-container">
+                    <button class="btn btn-primary" onclick="dersEkle('101')">Ders Ekle</button>
+                    <button class="btn btn-danger" onclick="dersCikar('101')">Ders Çıkar</button>
+                    <button class="btn btn-success" onclick="onayla('101')">Onayla</button>
+                </td>
+            </tr>
+            <tr>
+                <td>201</td>
+                <td>Fizik</td>
+                <td>Seçmeli</td>
+                <td>2</td>
+                <td>1</td>
+                <td>4</td>
+                <td>5</td>
+                <td class="btn-container">
+                    <button class="btn btn-primary" onclick="dersEkle('201')">Ders Ekle</button>
+                    <button class="btn btn-danger" onclick="dersCikar('201')">Ders Çıkar</button>
+                    <button class="btn btn-success" onclick="onayla('201')">Onayla</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>İlgili Dersi Alan Öğrenci Bilgileri</h3>
+    <ul id="ogrenciListesi">
+        <!-- Öğrenci listesi -->
+        <li>Öğrenci 1</li>
+        <li>Öğrenci 2</li>
+    </ul>
+
+    <h3>Seçilen Öğrenciye Ait Ders Bilgileri</h3>
+    <div id="secilenOgrenciDersBilgileri">
+        <p><strong>Dersin Kodu ve Adı:</strong> 101 - Veri Bilimi</p>
+        <p><strong>Ders Türü:</strong> Zorunlu</p>
+        <p><strong>Teorik (T):</strong> 3</p>
+        <p><strong>Uygulama (U):</strong> 2</p>
+        <p><strong>Kredi (K):</strong> 5</p>
+        <p><strong>ECTS:</strong> 6</p>
+    </div>
+
+
+
+</body>
+
+</html>

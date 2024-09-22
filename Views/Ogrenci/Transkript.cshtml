@@ -1,0 +1,155 @@
+﻿@model Zeun.Web.Models.OgrenciOzlukBilgileriViewModel
+@{
+    Layout = "~/Views/Shared/_OgrenciLayout.cshtml";
+}
+@functions {
+
+   
+}
+
+
+
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bandırma OnYedi Eylül Üniversitesi - Öğrenci Transkripti</title>
+    <style>
+        .table-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+            .table-container table {
+                width: 45%;
+                margin-right: 5%;
+                float: left;
+                margin-bottom: 20px;
+            }
+
+        th,
+        td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        body {
+            font-family: "Arial", sans-serif;
+            margin: 20px;
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        #bilgiKutulari {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        #ogrenciBilgileri,
+        #kurumsalBilgiler {
+            width: 48%;
+            padding: 10px;
+            border: 1px solid #1e1c1c;
+            border-radius: 7px;
+        }
+
+        #genelBilgiler {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Bandırma OnYedi Eylül Üniversitesi - Öğrenci Transkripti</h1>
+
+    <div id="bilgiKutulari">
+        <div id="ogrenciBilgileri">
+            <h2>Öğrenci Bilgileri</h2>
+            <p><strong>Adı Soyadı:</strong> @Model.Ogrenci.Adi  @Model.Ogrenci.Soyadi</p>
+            <p><strong>T.C. Kimlik No:</strong> @Model.Ogrenci.TckimlikNo</p>
+            <p><strong>Öğrenci No:</strong> @Model.Ogrenci.OgrenciNo</p>
+            <p><strong>Bölüm / Program:</strong> @Model.Bolum.BolumAdi</p>
+        </div>
+
+        <div id="kurumsalBilgiler">
+            <h2>Kurumsal Bilgiler</h2>
+            <p><strong>Tarih:</strong> @DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")</p>
+            <p><strong>Kayıt Tarihi:</strong> @Model.Ogrenci.KayitTarihi</p>
+            <p><strong>Ayrılış Tarihi:</strong> @Model.Ogrenci.AyrilmaTarihi</p>
+            <p>
+                <strong>Top.Krd/AGNO:</strong> @foreach (var kredi in Model.DersHavuzu)
+                {
+                    kredi.Kredi += kredi.Kredi;
+                    @kredi.Kredi
+                }
+                / @Model.Ogrenci.Gano
+            </p>
+            <p><strong>Öğrenim Durumu:</strong>@Model.OgrenciDurum.OgrenciDurumu</p>
+        </div>
+    </div>
+
+    <div class="table-container">
+        @for (int donem = 1; donem <= 8; donem++)
+        {
+            <table>
+                <caption>@donem. Sınıf @((donem % 2 == 1) ? "Güz" : "Bahar") Dönemi</caption>
+                <thead>
+                    <tr>
+                        <th>Ders Kodu ve Adı</th>
+                        <th>Ders Türü</th>
+                        <th>Teorik</th>
+                        <th>Uygulama</th>
+                        <th>Kredi</th>
+                        <th>ECTS</th>
+                        <th>Dörtlük Not</th>
+                        <th>Harf Notu</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var ders in Model.DersHavuzu)
+                    {
+                        <tr>
+                            <td>@ders.DersKodu - @ders.DersAdi</td>
+                            <td>@Model.DersTuru[Model.DersHavuzu.IndexOf(ders)].DersTuru1</td>
+                            <td>@ders.Teorik</td>
+                            <td>@ders.Uygulama</td>
+                            <td>@ders.Kredi</td>
+                            <td>@ders.Ects</td>
+                            <td>[Not]</td>
+                            <td>[Harf Notu]</td>
+                        </tr>
+                    }
+                    <tr>
+                        <td colspan="8" style="text-align: right">
+                            Genel Akademik Not Ortalaması (GANO): 222222
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        }
+
+
+
+      
+        
+
+    </div>
+    <button class="alert-info md-3"><a href="@Url.Action("IndirTranskriptPDF", "Ogrenci")">PDF İndir</a></button>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+﻿@model Zeun.Web.Models.OgrenciOzlukBilgileriViewModel
+
+@{
+    Layout = "/Views/Shared/_OgrenciLayout.cshtml";
+}
+
+<body>
+    <div class="container mt-5">
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="box box-1">
+                        <h5>Aktif Akademik Dönem Bilgileri</h5>
+                        <p>2023-2024 Güz Dönemi  </p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="box box-2">
+                        <h5>Danışman Bilgileri</h5>
+                        <p>Arş. gör. Maide Feyza Er</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="box box-3">
+                        <h5>Öğrenim Bilgileri</h5>
+                        <p>@Model.Bolum.BolumAdi</p>
+                        <p>4. Sınıf</p>
+                        <p>@Model.Ogrenci.KayitTarihi</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="box box-4">
+                        <h5>GANO</h5>
+                        <p></p>
+                        <p>2,42</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+

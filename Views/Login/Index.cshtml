@@ -1,0 +1,105 @@
+﻿@model Zeun.Web.Models.Kullanici
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Obs</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" type="image/png" href="~/content/icons/favicon.ico" />
+    <link href="~/content/vendor/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/content/fonts/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/content/vendor/animate.css" rel="stylesheet" />
+    <link href="~/content/vendor/hamburgers.min.css" rel="stylesheet" />
+    <link href="~/content/vendor/select2.min.css" rel="stylesheet" />
+    <link href="~/content/vendor/util.css" rel="stylesheet" />
+    <link href="~/content/vendor/main.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    @if (ViewBag.Error != null)
+    {
+        <div class="alert alert-danger" role="alert">
+            @ViewBag.Error
+        </div>
+    }
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100">
+                <div class="login100-pic js-tilt" data-tilt>
+                    <img src="~/content/icons/img-01.png" alt="IMG">
+                </div>
+
+                <form class="login100-form validate-form" action="/Login/Login" method="post">
+                    <span class="login100-form-title">
+                        <div class="login100-pic js-tilt" data-tilt>
+                            <img src="~/content/icons/zaun.jpg" alt="IMG">
+                        </div>
+                    </span>
+
+                    <div class="wrap-input100 validate-input">
+
+
+                        <input class="input100" type="text" asp-for="KullaniciAdi" name="KullaniciAdi" placeholder="Kullanıcı Adı">
+                        <span class="focus-input100"></span>
+
+                        <br />
+
+                        <div class="wrap-input100 validate-input" data-validate="Password is required">
+                            <input class="input100" type="password" asp-for="Parola" name="Parola" placeholder="Parola">
+                            <span class="focus-input100"></span>
+
+                        </div>
+                        ,
+
+
+                    </div>
+
+
+
+
+                    <div class="container-login100-form-btn">
+                        <button class="login100-form-btn" type="submit">
+                            Login
+                        </button>
+                    </div>
+
+                    <div class="text-center p-t-12">
+                        <span class="txt1">
+                            Forgot
+                        </span>
+                        <a class="txt2" href="#">
+                            Username / Password?
+                        </a>
+                    </div>
+
+                    <div class="text-center p-t-136">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="~/content/vendor/jquery-3.2.1.min.js"></script>
+    <script src="~/content/vendor/popper.js"></script>
+    <script src="~/content/vendor/bootstrap.min.js"></script>
+    <script src="~/content/vendor/select2.min.js"></script>
+    <script src="~/content/vendor/tilt.jquery.min.js"></script>
+
+    <script>
+        $('.js-tilt').tilt({
+            scale: 1.1
+        })
+    </script>
+
+    <script src="~/content/vendor/main.js"></script>
+</body>
+
+</html>

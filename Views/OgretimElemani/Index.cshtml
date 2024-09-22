@@ -1,0 +1,38 @@
+﻿@model Zeun.Web.Models.OgretimElemaniViewModel
+@{
+    Layout = "~/Views/Shared/_OgretimELemaniLayout.cshtml";
+}
+
+
+<body>
+    <div class="container mt-5">
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="box box-1">
+                        <h5>Aktif Akademik Dönem Bilgileri</h5>
+                        <p>2023-2024 Güz Dönemi  </p>
+                    </div>
+                </div>
+              
+                <div class="col-md-3">
+                    <div class="box box-3">
+                        <h5>Öğrentim Elemanı Bilgileri</h5>
+                        <p>@Model.Unvan.UnvanAdi @Model.OgretimElemani.Adi  @Model.OgretimElemani.Soyadi</p>
+                 
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="box box-4">
+                        <h5>Bölümü</h5>
+                        <p></p>
+                        <p>@Model.Bolum.BolumAdi</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+

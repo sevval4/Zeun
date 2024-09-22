@@ -1,0 +1,110 @@
+﻿@model Zeun.Web.Models.OgrenciOzlukBilgileriViewModel
+@{
+    Layout = "~/Views/Shared/_OgrenciLayout.cshtml";
+}
+
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Öğrenci Ders Kayıt</title>
+    <style>
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+
+        th,
+        td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 12px;
+            font-size: 14px;
+        }
+
+        th {
+            background-color: #7795aa;
+        }
+
+        .highlight {
+            background-color: #e0f7fa;
+            cursor: pointer;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            cursor: pointer;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+
+        .btn-primary {
+            background-color: #598cde;
+        }
+
+        .btn-danger {
+            background-color: #d36257;
+        }
+
+        .btn-success {
+            background-color: #4b935e;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Öğrenci Ders Kayıt</h2>
+
+    <table>
+        <thead>
+            <tr class="highlight">
+                <th>Ders Kodu</th>
+                <th>Ders Adı</th>
+                <th>Ders Türü</th>
+                <th>Teorik (T)</th>
+                <th>Uygulama (U)</th>
+                <th>Kredi (K)</th>
+                <th>ECTS</th>
+                <th>İşlemler</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>101</td>
+                <td>Veri Bilimi</td>
+                <td>Zorunlu</td>
+                <td>3</td>
+                <td>2</td>
+                <td>5</td>
+                <td>6</td>
+                <td>
+                    <button class="btn btn-primary">Ders Ekle</button>
+                    <button class="btn btn-danger">Ders Çıkar</button>
+                    <button class="btn btn-success">Onayla</button>
+                </td>
+            </tr>
+            <tr>
+                <td>201</td>
+                <td>Fizik</td>
+                <td>Seçmeli</td>
+                <td>2</td>
+                <td>1</td>
+                <td>4</td>
+                <td>5</td>
+                <td>
+                    <button class="btn btn-primary">Ders Ekle</button>
+                    <button class="btn btn-danger">Ders Çıkar</button>
+                    <button class="btn btn-success">Onayla</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+

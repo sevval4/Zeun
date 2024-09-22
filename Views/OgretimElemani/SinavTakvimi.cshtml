@@ -1,0 +1,88 @@
+﻿@model Zeun.Web.Models.OgretimElemaniViewModel
+@{
+    Layout = "~/Views/Shared/_OgretimELemaniLayout.cshtml";
+}
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Öğretim Elemanı Sınav Takvimi</title>
+    <style>
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+
+        th,
+        td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 12px;
+            font-size: 14px;
+        }
+
+        th {
+            background-color: #7795aa;
+        }
+
+        .highlight {
+            background-color: #e6f7ff;
+            text-align: center;
+        }
+
+        tr:hover {
+            background-color: #e0f7fa;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Öğretim Elemanı Sınav Takvimi</h2>
+
+    <table>
+        <thead>
+            <tr class="highlight">
+                <th>Bölüm Adı</th>
+                <th>Ders Kodu</th>
+                <th>Ders Adı</th>
+                <th>Sınav Türü</th>
+                <th>Sınav Günü ve Saati</th>
+                <th>Derslik Adı</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Bilgisayar Mühendisliği</td>
+                <td>101</td>
+                <td>Matematik</td>
+                <td>Vize</td>
+                <td>Pazartesi, 10:00</td>
+                <td>Derslik 1</td>
+            </tr>
+            <tr>
+                <td>Bilgisayar Mühendisliği</td>
+                <td>201</td>
+                <td>Fizik</td>
+                <td>Final</td>
+                <td>Çarşamba, 14:30</td>
+                <td>Derslik 2</td>
+            </tr>
+            <tr>
+                <td>Yazılım Mühendisliği</td>
+                <td>301</td>
+                <td>Mobil Programlama</td>
+                <td>Bütünleme</td>
+                <td>Perşembe, 09:00</td>
+                <td>Derslik 3</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>

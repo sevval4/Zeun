@@ -1,0 +1,66 @@
+﻿@model Zeun.Web.Models.OgrenciOzlukBilgileriViewModel
+@{
+    Layout = "~/Views/Shared/_OgrenciLayout.cshtml";
+}
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yazılım Mühendisliği 2023-2024 Güz Ders Programı</title>
+    <style>
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+
+        th,
+        td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 12px;
+            font-size: 14px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .highlight {
+            background-color: #e6f7ff;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <table>
+        <tr>
+            <th>Saat</th>
+            <th>Pazartesi</th>
+            <th>Salı</th>
+            <th>Çarşamba</th>
+            <th>Perşembe</th>
+            <th>Cuma</th>
+
+        </tr>
+        @foreach(var dersSaat in Model.DersProgrami){
+        <tr>
+            <td class="highlight">@dersSaat.DersSaati</td>
+            <td>@Model.DersHavuzu</td>
+            <td>BOŞ</td>
+            <td>BOŞ</td>
+            <td>BOŞ</td>
+            <td class="highlight">YMM4143<br>Makine Öğrenmesi<br>Dr. Öğr. Üyesi Buket TOPTAŞ<br>6 Nolu Derslik</td>
+        </tr>
+        }
+    </table>
+
+</body>
+
+</html>

@@ -1,0 +1,164 @@
+﻿@model Zeun.Web.Models.OgretimElemaniViewModel
+@{
+    Layout = "~/Views/Shared/_OgretimELemaniLayout.cshtml";
+}
+
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Öğretim Elemanı Not Girişi</title>
+    <style>
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+
+        th,
+        td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 12px;
+            font-size: 14px;
+        }
+
+        th {
+            background-color: #7795aa;
+            color: white;
+        }
+
+        .highlight {
+            background-color: #e6f7ff;
+            text-align: center;
+        }
+
+        tr:hover {
+            background-color: #e0f7fa;
+            cursor: pointer;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(100, 175, 92, 0.3);
+            z-index: 1;
+        }
+
+        .modal-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .close {
+            cursor: pointer;
+            color: #555;
+            font-size: 20px;
+            font-weight: bold;
+            align-self: flex-end;
+        }
+
+            .close:hover {
+                color: #333;
+            }
+
+        label {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 20px;
+            box-sizing: border-box;
+            border: 1px solid #7aeb91;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #4b935e;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+            button:hover {
+                background-color: #4b935e;
+            }
+    </style>
+</head>
+
+<body>
+
+    <h2>Öğretim Elemanı Not Girişi</h2>
+
+    <table>
+        <thead>
+            <tr class="highlight">
+                <th>Ders Kodu</th>
+                <th>Ders Adı</th>
+                <th>Sınav Türü</th>
+                <th>Sınavın Etki Oranı</th>
+                <th>Not Girişi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-derskodu="101" data-dersadi="Matematik" data-sinavturu="Vize" data-etkioran="40%">
+                <td>101</td>
+                <td>Matematik</td>
+                <td>Vize</td>
+                <td>40%</td>
+                <td><button onclick="openModal(101, 'Matematik', 'Vize', '40%')">Not Girişi</button></td>
+            </tr>
+            <tr data-derskodu="201" data-dersadi="Fizik" data-sinavturu="Final" data-etkioran="60%">
+                <td>201</td>
+                <td>Fizik</td>
+                <td>Final</td>
+                <td>60%</td>
+                <td><button onclick="openModal(201, 'Fizik', 'Final', '60%')">Not Girişi</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div id="notGirisiModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h3>Not Girişi - <span id="modalDersAdi"></span></h3>
+            <label for="not">Not:</label>
+            <input type="text" id="not" name="not" placeholder="Notu giriniz">
+            <button onclick="saveNot()">Kaydet</button>
+        </div>
+    </div>
+
+    <script>
+        function openModal(dersKodu, dersAdi, sinavTuru, etkiOran) {
+            document.getElementById("modalDersAdi").innerText = dersAdi + " (" + sinavTuru + ")";
+            document.getElementById("notGirisiModal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("notGirisiModal").style.display = "none";
+        }
+
+        function saveNot() {
+            alert("Not kaydedildi.");
+            closeModal();
+        }
+    </script>
+
+</body>
+
